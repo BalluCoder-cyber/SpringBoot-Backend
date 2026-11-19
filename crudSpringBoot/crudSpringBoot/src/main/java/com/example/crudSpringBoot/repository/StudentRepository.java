@@ -1,25 +1,11 @@
 package com.example.crudSpringBoot.repository;
 
 import com.example.crudSpringBoot.entity.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
-public class StudentRepository {
+@Repository // it is not necessary to use it now
+public interface StudentRepository  extends JpaRepository<Student,Long> {
 
-    public Student saveStudent(Student studentReq){
-        //Save to db
-
-        System.out.println("Inside student Repository");
-        System.out.println("Existing student Repository");
-
-        Student s1 = new Student();
-        s1.setName("Rahul");
-        s1.setRollNo(1044);
-        s1.setAge(44);
-        s1.setEmail("balwsldg66@dgamai");
-        s1.setSubject("springboot crud");
-
-        return s1;
-
-    }
 }
